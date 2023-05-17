@@ -1,6 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+MULTIPLIER = 0.3333
+POINT_1 = 1
+AGE_20 = 20
+AGE_40 = 40
+AGE_60 = 60
+
 Sympthoms = np.zeros((7, 5))
 # -----------------D1---------------------
 text_file = open("Stones_var5.csv", "r")
@@ -17,46 +23,46 @@ for i in range(1, D1Size):
     # вік
     Age = int(data[0])
 
-    if Age < 20:
-        Sympthoms[1, 1] += 1
-    elif (Age >= 20) and (Age < 40):
-        Sympthoms[1, 2] += 1
-    elif (Age >= 40) and (Age < 60):
-        Sympthoms[1, 3] += 1
+    if Age < AGE_20:
+        Sympthoms[1, 1] += POINT_1
+    elif (Age >= AGE_20) and (Age < AGE_40):
+        Sympthoms[1, 2] += POINT_1
+    elif (Age >= AGE_40) and (Age < AGE_60):
+        Sympthoms[1, 3] += POINT_1
     else:
-        Sympthoms[1, 4] += 1
+        Sympthoms[1, 4] += POINT_1
 
     # блювота
     if data[1] == 'yes':
-        Sympthoms[2, 1] += 1
+        Sympthoms[2, 1] += POINT_1
     else:
-        Sympthoms[2, 2] += 1
+        Sympthoms[2, 2] += POINT_1
 
     # жовтушність
     if data[2] == 'eye':
-        Sympthoms[3, 1] += 1
+        Sympthoms[3, 1] += POINT_1
     elif data[2] == 'skin':
-        Sympthoms[3, 2] += 1
+        Sympthoms[3, 2] += POINT_1
     else:
-        Sympthoms[3, 3] += 1
+        Sympthoms[3, 3] += POINT_1
 
     # напади болю
     if data[3] == 'yes':
-        Sympthoms[4, 1] += 1
+        Sympthoms[4, 1] += POINT_1
     else:
-        Sympthoms[4, 2] += 1
+        Sympthoms[4, 2] += POINT_1
 
     # збільшення печінка
     if data[4] == 'yes':
-        Sympthoms[5, 1] += 1
+        Sympthoms[5, 1] += POINT_1
     else:
-        Sympthoms[5, 2] += 1
+        Sympthoms[5, 2] += POINT_1
 
     # апетит
     if data[5] == 'yes\n':
-        Sympthoms[6, 1] += 1
+        Sympthoms[6, 1] += POINT_1
     else:
-        Sympthoms[6, 2] += 1
+        Sympthoms[6, 2] += POINT_1
 
 
 PrK = Sympthoms / Diagnose
@@ -78,46 +84,46 @@ for i in range(1, D2Size):
     # вік
     Age = int(data2[0])
 
-    if Age < 20:
-        Sympthoms2[1, 1] += 1
-    elif (Age >= 20) and (Age < 40):
-        Sympthoms2[1, 2] += 1
-    elif (Age >= 40) and (Age < 60):
-        Sympthoms2[1, 3] += 1
+    if Age < AGE_20:
+        Sympthoms2[1, 1] += POINT_1
+    elif (Age >= AGE_20) and (Age < AGE_40):
+        Sympthoms2[1, 2] += POINT_1
+    elif (Age >= AGE_40) and (Age < AGE_60):
+        Sympthoms2[1, 3] += POINT_1
     else:
-        Sympthoms2[1, 4] += 1
+        Sympthoms2[1, 4] += POINT_1
 
     # блювота
     if data2[1] == 'yes':
-        Sympthoms2[2, 1] += 1
+        Sympthoms2[2, 1] += POINT_1
     else:
-        Sympthoms2[2, 2] += 1
+        Sympthoms2[2, 2] += POINT_1
 
     # жовтушність
     if data2[2] == 'eye':
-        Sympthoms2[3, 1] += 1
+        Sympthoms2[3, 1] += POINT_1
     elif data2[2] == 'skin':
-        Sympthoms2[3, 2] += 1
+        Sympthoms2[3, 2] += POINT_1
     else:
-        Sympthoms2[3, 3] += 1
+        Sympthoms2[3, 3] += POINT_1
 
     # напади болю
     if data2[3] == 'yes':
-        Sympthoms2[4, 1] += 1
+        Sympthoms2[4, 1] += POINT_1
     else:
-        Sympthoms2[4, 2] += 1
+        Sympthoms2[4, 2] += POINT_1
 
     # збільшення печінка
     if data2[4] == 'yes':
-        Sympthoms2[5, 1] += 1
+        Sympthoms2[5, 1] += POINT_1
     else:
-        Sympthoms2[5, 2] += 1
+        Sympthoms2[5, 2] += POINT_1
 
     # апетит
     if data2[5] == 'yes\n':
-        Sympthoms2[6, 1] += 1
+        Sympthoms2[6, 1] += POINT_1
     else:
-        Sympthoms2[6, 2] += 1
+        Sympthoms2[6, 2] += POINT_1
 
 PrK2 = Sympthoms2 / Diagnose2
 print(PrK2)
@@ -139,55 +145,58 @@ for i in range(1, D3Size):
     # вік
     Age = int(data3[0])
 
-    if Age < 20:
-        Sympthoms3[1, 1] += 1
-    elif (Age >= 20) and (Age < 40):
-        Sympthoms3[1, 2] += 1
-    elif (Age >= 40) and (Age < 60):
-        Sympthoms3[1, 3] += 1
+    if Age < AGE_20:
+        Sympthoms3[1, 1] += POINT_1
+    elif (Age >= AGE_20) and (Age < AGE_40):
+        Sympthoms3[1, 2] += POINT_1
+    elif (Age >= AGE_40) and (Age < AGE_60):
+        Sympthoms3[1, 3] += POINT_1
     else:
-        Sympthoms3[1, 4] += 1
+        Sympthoms3[1, 4] += POINT_1
 
     # блювота
     if data3[1] == 'yes':
-        Sympthoms3[2, 1] += 1
+        Sympthoms3[2, 1] += POINT_1
     else:
-        Sympthoms3[2, 2] += 1
+        Sympthoms3[2, 2] += POINT_1
 
     # жовтушність
     if data3[2] == 'eye':
-        Sympthoms3[3, 1] += 1
+        Sympthoms3[3, 1] += POINT_1
     elif data3[2] == 'skin':
-        Sympthoms3[3, 2] += 1
+        Sympthoms3[3, 2] += POINT_1
     else:
-        Sympthoms3[3, 3] += 1
+        Sympthoms3[3, 3] += POINT_1
 
     # напади болю
     if data3[3] == 'yes':
-        Sympthoms3[4, 1] += 1
+        Sympthoms3[4, 1] += POINT_1
     else:
-        Sympthoms3[4, 2] += 1
+        Sympthoms3[4, 2] += POINT_1
 
     # збільшення печінка
     if data3[4] == 'yes':
-        Sympthoms3[5, 1] += 1
+        Sympthoms3[5, 1] += POINT_1
     else:
-        Sympthoms3[5, 2] += 1
+        Sympthoms3[5, 2] += POINT_1
 
     # апетит
     if data3[5] == 'yes\n':
-        Sympthoms3[6, 1] += 1
+        Sympthoms3[6, 1] += POINT_1
     else:
-        Sympthoms3[6, 2] += 1
+        Sympthoms3[6, 2] += POINT_1
 
 PrK3 = Sympthoms3 / Diagnose3
 print(PrK3)
 
 
-# k11, k21, k32, k41, k51,  k62
-PrK_D1 = PrK[1, 3] * PrK[2, 1] * PrK[3, 2] * PrK[4, 1] * PrK[5, 1] * PrK[6, 2] * 0.3333  # числитель
-PrK_D2 = PrK2[1, 3] * PrK2[2, 1] * PrK2[3, 2] * PrK2[4, 1] * PrK2[5, 1] * PrK2[6, 2] * 0.3333  # числитель
-PrK_D3 = PrK3[1, 3] * PrK3[2, 1] * PrK3[3, 2] * PrK3[4, 1] * PrK3[5, 1] * PrK3[6, 2] * 0.3333  # числитель
+# В этих трех строках происходит вычисление числителя для каждого из трех диагнозов. Каждая строка представляет
+# собой произведение вероятностей различных симптомов, связанных с соответствующим диагнозом. Значение 0.3333
+# представляет собой нормализационный коэффициент, который используется для приведения значений вероятности к диапазону
+# от 0 до 1.
+PrK_D1 = PrK[1, 3] * PrK[2, 1] * PrK[3, 2] * PrK[4, 1] * PrK[5, 1] * PrK[6, 2] * MULTIPLIER  # числитель
+PrK_D2 = PrK2[1, 3] * PrK2[2, 1] * PrK2[3, 2] * PrK2[4, 1] * PrK2[5, 1] * PrK2[6, 2] * MULTIPLIER  # числитель
+PrK_D3 = PrK3[1, 3] * PrK3[2, 1] * PrK3[3, 2] * PrK3[4, 1] * PrK3[5, 1] * PrK3[6, 2] * MULTIPLIER  # числитель
 
 PrD1_K = PrK_D1 / (PrK_D1+PrK_D2+PrK_D3)
 print("\n")
